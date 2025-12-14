@@ -1,4 +1,3 @@
-# Imports
 import logging
 import random
 import pwnagotchi.plugins as plugins
@@ -67,8 +66,7 @@ CUSTOM_PHRASES = [
     "Pwning: The art of digital seduction.",
 ]
 
-class CFP(plugins.Plugin):
-    # Credits
+class CFP(plugins.Plugin)
     __author__ = 'p.xelbrei'
     __version__ = '1.0.0'
     __license__ = 'GPL3'
@@ -92,7 +90,6 @@ class CFP(plugins.Plugin):
     def on_ui_update(self, ui):
         """Displays random phrases based on configurable probabilities."""
         try:
-            # Show random phrases
             phrase_chance = int(self.options.get('phrase_chance', 10))  # Default: 10%
             if random.randint(0, 100) < phrase_chance:
                 random_phrase = random.choice(CUSTOM_PHRASES)
@@ -111,3 +108,4 @@ class CFP(plugins.Plugin):
 def setup():
     """Creates an instance of the plugin."""
     return CFP()
+
